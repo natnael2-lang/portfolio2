@@ -31,7 +31,7 @@ const Hero = () => {
               </Button>
               <Button size="lg" variant="outline" className="gap-2">
               
-              <a href="/cv5.pdf" download>
+              <a href="/cv6.pdf" download>
               <Download className="w-5 h-5" />
               Download CV
   </a>
