@@ -5,7 +5,7 @@ const Portfolio = () => {
   const projects = [
     {
       title: "Gym Platform",
-      description: "Full-stack e-commerce solution with payment integration",
+      description: "A web platform to manage gym memberships, track workouts, and schedule classes efficiently.",
       image: "/assets/project-1.jpg",
       tags: ["React", "Node.js", "MongoDB"],
       githubLink: "https://github.com/yourusername/gym-platform",
@@ -13,33 +13,41 @@ const Portfolio = () => {
     },
     {
       title: "Movie Site",
-      description: "Analytics dashboard for social media management",
+      description: "A web platform to browse, search, and stream information about movies, including ratings and reviews.",
       image: "/assets/project-2.jpg",
-      tags: ["Next.js", "TypeScript", "Tailwind"],
+      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
       githubLink: "https://github.com/yourusername/movie-site",
       deployed: "https://best-movie-website.netlify.app/"
     },
     {
       title: "E-Commerce Platform",
-      description: "Collaborative project management tool",
+      description: "A full-featured e-commerce platform for browsing products, managing orders",
       image: "/assets/project-3.jpg",
-      tags: ["Vue", "Flask", "MySQL"],
+      tags: ["React", "Express", "MySQL"],
       githubLink: "https://github.com/yourusername/ecommerce-platform",
       deployed: "https://best-ecommerce-website.vercel.app/"
     },
     {
       title: "Education Website",
-      description: "WebSocket-based messaging platform",
+      description: "A comprehensive education platform that provides learning resources, courses, and interactive content for students.",
       image: "/assets/project-4.jpg",
-      tags: ["React", "Go", "WebSocket"],
+      tags: ["React", "Go", "MySQL"],
       githubLink: "https://github.com/yourusername/education-website",
       deployed: "https://educationallandingpage.netlify.app/"
+    },
+    {
+      title: "Guess Game",
+      description: "A fun interactive guessing game where users try to guess the correct number within a limited number of attempts.",
+      image: "/assets/guess.png",
+      tags: ["React", "Tailwind CSS", "MongoDB"],
+      githubLink: "https://github.com/natnael2-lang/guess_game",
+      deployed: "https://guess-game-kappa-plum.vercel.app/"
     },
     {
       title: "Mortgage Calculator",
       description: "Content management system for portfolios",
       image: "/assets/project-5.jpg",
-      tags: ["Next.js", "GraphQL", "Prisma"],
+      tags: ["Javascript", "CSS"],
       githubLink: "https://github.com/yourusername/mortgage-calculator",
       deployed: "https://best-mortage-calculator.netlify.app/"
     },
@@ -47,25 +55,33 @@ const Portfolio = () => {
       title: "Gemini Integrated App",
       description: "Real-time weather data visualization",
       image: "/assets/gemini-new (1).png",
-      tags: ["React", "API Integration", "Charts"],
+      tags: ["React","Tailwind CSS", "API Integration"],
       githubLink: "https://github.com/yourusername/gemini-app",
       deployed: "https://gemini-integration2.vercel.app/"
     },
     {
       title: "Hospital Management Website",
-      description: "Real-time hospital management system",
+      description: "A web platform that automates hospital operations, from patient registration to staff and medical record management.",
       image: "/assets/woldia-hospital-home1 (1).png",
-      tags: ["React", "API Integration", "Charts"],
-      githubLink: "https://github.com/yourusername/hospital-management",
+      tags: ["React", "Tailwind CSS", "Express","MongoDB"],
+      githubLink: "https://github.com/natnael2-lang/hospitalManagementClient",
       deployed: "https://hospital-management-client-nu.vercel.app/"
     },
     {
       title: "Business Tracker Web App",
-      description: "Real-time project tracking web app",
+      description: "Records the daily expenses and provides daily,monthly,yearly profits and breakeven points using charts",
       image: "/assets/bussiness-traker.png",
-      tags: ["React", "API Integration", "Charts"],
+      tags: ["React", "CSS", "Recharts"],
       githubLink: "https://github.com/yourusername/business-tracker",
       deployed: "https://bussiness-tracker.vercel.app/"
+    },
+    {
+      title: "Attendance Web App",
+      description: "Record the attendance of registered users and enable crud operations on recorded datas",
+      image: "/assets/attendance-register (1).png",
+      tags: ["React", "CSS", "Recharts"],
+      githubLink: "https://github.com/natnael2-lang/attendance-frontEnd",
+      deployed: "https://attendo-face-reg.vercel.app/"
     },
   ];
 
