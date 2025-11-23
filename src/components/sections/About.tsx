@@ -2,11 +2,8 @@ import { User, MapPin, Mail, Phone, Globe, Calendar } from "lucide-react";
 
 const About = () => {
   const personalInfo = [
-    { icon: User, label: "First Name", value: "Natnael" },
-    { icon: User, label: "Last Name", value: "Messay" },
-    { icon: Calendar, label: "Age", value: "23 Years" },
-    { icon: Globe, label: "Nationality", value: "Ethiopian" },
-    { icon: MapPin, label: "Address", value: "Addis Ababa" },
+    { icon: User, label: "Full Name", value: "Natnael Messay" },
+    { icon: MapPin, label: "Address", value: "Addis Ababa,Ethiopia" },
     { icon: Phone, label: "Phone", value: "+251991998852" },
     { icon: Mail, label: "Email", value: "natnaelmessay70@mail.com" },
     { icon: Globe, label: "Languages", value: "Amharic, English" },
