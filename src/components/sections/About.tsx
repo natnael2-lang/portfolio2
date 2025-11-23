@@ -6,7 +6,6 @@ const About = () => {
     { icon: MapPin, label: "Address", value: "Addis Ababa,Ethiopia" },
     { icon: Phone, label: "Phone", value: "+251991998852" },
     { icon: Mail, label: "Email", value: "natnaelmessay70@mail.com" },
-    { icon: Globe, label: "Languages", value: "Amharic, English" },
   ];
 
   return (
