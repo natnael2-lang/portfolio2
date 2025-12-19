@@ -44,6 +44,14 @@ const Portfolio = () => {
       deployed: "https://alle-school-of-fine-arts.vercel.app/"
     },
     {
+      title: "Code Editor",
+      description: "A focused code editor where challenge takers can write, test, and submit code directly according to assigned tasks. It ensures a controlled environment to complete challenges without distractions.",
+      image: "/assets/codeEditor.png",
+      tags: ["React", "Tailwind CSS","MongoDB","codeMirror"],
+      githubLink: "https://github.com/natnael2-lang/code-editor-front",
+      deployed: "https://code-editor-front-git-main-natnael2-langs-projects.vercel.app/"
+    },
+    {
       title: "Guess Game",
       description: "A fun interactive guessing game where users try to guess the correct number within a limited number of attempts.",
       image: "/assets/guess.png",
