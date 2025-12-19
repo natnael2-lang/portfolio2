@@ -36,6 +36,14 @@ const Portfolio = () => {
       deployed: "https://educationallandingpage.netlify.app/"
     },
     {
+      title: "Alle School of Fine Arts & Design",
+      description: "The Alle School of Fine Arts & Design website showcases the school’s history, programs, and achievements in Ethiopian design education. It informs, engages, and guides prospective students through program details and virtual tours.",
+      image: "/assets/alle2.png",
+      tags: ["React", "Tailwind CSS",],
+      githubLink: "https://github.com/natnael2-lang/alle-school-of-fine-arts",
+      deployed: "https://alle-school-of-fine-arts.vercel.app/"
+    },
+    {
       title: "Guess Game",
       description: "A fun interactive guessing game where users try to guess the correct number within a limited number of attempts.",
       image: "/assets/guess.png",
