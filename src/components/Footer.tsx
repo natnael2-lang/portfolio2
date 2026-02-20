@@ -44,9 +44,6 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm">
               © {currentYear} Natnael Messay. All rights reserved.
             </p>
-            <p className="text-muted-foreground text-sm mt-1">
-              Built with React, TypeScript & Tailwind CSS
-            </p>
           </div>
         </div>
       </div>

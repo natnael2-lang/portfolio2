@@ -1,10 +1,15 @@
+import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Portfolio = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const projects = [
     {
       title: "Gym Platform",
+      category: "Full Stack",
       description: "A web platform to manage gym memberships, track workouts, and schedule classes efficiently.",
       image: "/assets/project-1.jpg",
       tags: ["React", "Node.js", "MongoDB"],
@@ -13,6 +18,7 @@ const Portfolio = () => {
     },
     {
       title: "Movie Site",
+      category: "Frontend",
       description: "A web platform to browse, search, and stream information about movies, including ratings and reviews.",
       image: "/assets/project-2.jpg",
       tags: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -20,150 +26,177 @@ const Portfolio = () => {
       deployed: "https://best-movie-website.netlify.app/"
     },
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform for browsing products, managing orders",
-      image: "/assets/project-3.jpg",
-      tags: ["React", "Express", "MySQL"],
-      githubLink: "https://github.com/yourusername/ecommerce-platform",
-      deployed: "https://best-ecommerce-website.vercel.app/"
-    },
-    {
-      title: "Education Website",
-      description: "A comprehensive education platform that provides learning resources, courses, and interactive content for students.",
-      image: "/assets/project-4.jpg",
-      tags: ["React", "Go", "MySQL"],
-      githubLink: "https://github.com/yourusername/education-website",
-      deployed: "https://educationallandingpage.netlify.app/"
-    },
-    {
-      title: "Alle School of Fine Arts & Design",
-      description: "The Alle School of Fine Arts & Design website showcases the school’s history, programs, and achievements in Ethiopian design education. It informs, engages, and guides prospective students through program details and virtual tours.",
-      image: "/assets/alle2.png",
-      tags: ["React", "Tailwind CSS",],
-      githubLink: "https://github.com/natnael2-lang/alle-school-of-fine-arts",
-      deployed: "https://alle-school-of-fine-arts.vercel.app/"
-    },
-    {
-      title: "Code Editor",
-      description: "A focused code editor where challenge takers can write, test, and submit code directly according to assigned tasks. It ensures a controlled environment to complete challenges without distractions.",
-      image: "/assets/codeEditor.png",
-      tags: ["React", "Tailwind CSS","MongoDB","codeMirror"],
-      githubLink: "https://github.com/natnael2-lang/code-editor-front",
-      deployed: "https://code-editor-front-git-main-natnael2-langs-projects.vercel.app/"
-    },
-    {
-      title: "Guess Game",
-      description: "A fun interactive guessing game where users try to guess the correct number within a limited number of attempts.",
-      image: "/assets/guess.png",
-      tags: ["React", "Tailwind CSS", "MongoDB"],
-      githubLink: "https://github.com/natnael2-lang/guess_game",
-      deployed: "https://guess-game-kappa-plum.vercel.app/"
-    },
-    {
-      title: "Mortgage Calculator",
-      description: "Content management system for portfolios",
-      image: "/assets/project-5.jpg",
-      tags: ["Javascript", "CSS"],
-      githubLink: "https://github.com/yourusername/mortgage-calculator",
-      deployed: "https://best-mortage-calculator.netlify.app/"
-    },
-    {
-      title: "Gemini Integrated App",
-      description: "Real-time weather data visualization",
-      image: "/assets/gemini-new (1).png",
-      tags: ["React","Tailwind CSS", "API Integration"],
-      githubLink: "https://github.com/yourusername/gemini-app",
-      deployed: "https://gemini-integration2.vercel.app/"
-    },
-    {
-      title: "Hospital Management Website",
-      description: "A web platform that automates hospital operations, from patient registration to staff and medical record management.",
+      title: "Hospital Management",
+      category: "Full Stack",
+      description: "A web platform that automates hospital operations, from patient registration to medical records.",
       image: "/assets/woldia-hospital-home1 (1).png",
-      tags: ["React", "Tailwind CSS", "Express","MongoDB"],
+      tags: ["React", "Tailwind", "Express", "MongoDB"],
       githubLink: "https://github.com/natnael2-lang/hospitalManagementClient",
       deployed: "https://hospital-management-client-nu.vercel.app/"
     },
     {
-      title: "Business Tracker Web App",
-      description: "Records the daily expenses and provides daily,monthly,yearly profits and breakeven points using charts",
-      image: "/assets/bussiness-traker.png",
-      tags: ["React", "CSS", "Recharts"],
-      githubLink: "https://github.com/yourusername/business-tracker",
-      deployed: "https://bussiness-tracker.vercel.app/"
+      title: "Code Editor",
+      category: "Tools",
+      description: "A focused code editor where takers can write, test, and submit code directly in a controlled environment.",
+      image: "/assets/codeEditor.png",
+      tags: ["React", "Tailwind", "MongoDB", "codeMirror"],
+      githubLink: "https://github.com/natnael2-lang/code-editor-front",
+      deployed: "https://code-editor-front.vercel.app/"
     },
     {
-      title: "Attendance Web App",
-      description: "Record the attendance of registered users and enable crud operations on recorded datas",
-      image: "/assets/attendance-register (1).png",
-      tags: ["React", "CSS", "Recharts"],
-      githubLink: "https://github.com/natnael2-lang/attendance-frontEnd",
-      deployed: "https://attendo-face-reg.vercel.app/"
+      title: "Alle School of Arts",
+      category: "Frontend",
+      description: "Showcases the school’s history, programs, and achievements in Ethiopian design education.",
+      image: "/assets/alle2.png",
+      tags: ["React", "Tailwind CSS"],
+      githubLink: "https://github.com/natnael2-lang/alle-school-of-fine-arts",
+      deployed: "https://alle-school-of-fine-arts.vercel.app/"
     },
+    {
+      title: "Gemini Integrated App",
+      category: "Tools",
+      description: "AI-powered application for real-time data visualization and intelligent responses.",
+      image: "/assets/gemini-new (1).png",
+      tags: ["React", "Tailwind CSS", "API Integration"],
+      githubLink: "https://github.com/yourusername/gemini-app",
+      deployed: "https://gemini-integration2.vercel.app/"
+    },
+    {
+        title: "Business Tracker",
+        category: "Full Stack",
+        description: "Records daily expenses and provides daily, monthly, and yearly profits using charts.",
+        image: "/assets/bussiness-traker.png",
+        tags: ["React", "CSS", "Recharts"],
+        githubLink: "https://github.com/yourusername/business-tracker",
+        deployed: "https://bussiness-tracker.vercel.app/"
+      },
+      {
+        title: "Attendance Web App",
+        category: "Full Stack",
+        description: "Record the attendance of registered users and enable CRUD operations on recorded data.",
+        image: "/assets/attendance-register (1).png",
+        tags: ["React", "CSS", "Recharts"],
+        githubLink: "https://github.com/natnael2-lang/attendance-frontEnd",
+        deployed: "https://attendo-face-reg.vercel.app/"
+      },
+      {
+        title: "Guess Game",
+        category: "Tools",
+        description: "A fun interactive guessing game where users guess numbers within limited attempts.",
+        image: "/assets/guess.png",
+        tags: ["React", "Tailwind CSS", "MongoDB"],
+        githubLink: "https://github.com/natnael2-lang/guess_game",
+        deployed: "https://guess-game-kappa-plum.vercel.app/"
+      }
   ];
 
+  const categories = ["All", "Full Stack", "Frontend", "Tools"];
+
+  const filteredProjects = activeCategory === "All" 
+    ? projects 
+    : projects.filter(p => p.category === activeCategory);
+
   return (
-    <section id="portfolio" className="py-20">
+    <section id="portfolio" className="py-20 bg-muted/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          
+          {/* Section Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               My <span className="gradient-text">Portfolio</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Here are some of my recent projects showcasing my skills in full-stack development.
-            </p>
-          </div>
+            
+            {/* Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              {categories.map((cat) => (
+                <Button
+                  key={cat}
+                  variant={activeCategory === cat ? "default" : "outline"}
+                  onClick={() => setActiveCategory(cat)}
+                  className="rounded-full px-6 transition-all duration-300"
+                >
+                  {cat}
+                </Button>
+              ))}
+            </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="group rounded-lg overflow-hidden bg-card border border-border card-hover animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative overflow-hidden h-48">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center gap-4 pb-6">
-                    {project.deployed && (
-                      <a href={project.deployed} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" variant="secondary" className="gap-2">
-                          <ExternalLink className="w-4 h-4" />
-                          View
+          {/* Projects Grid */}
+          <motion.div 
+            layout
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <AnimatePresence mode='popLayout'>
+              {filteredProjects.map((project) => (
+                <motion.div
+                  layout
+                  key={project.title}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="group relative rounded-xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-xl transition-all flex flex-col h-full"
+                >
+                  {/* Image & Overlay */}
+                  <div className="relative overflow-hidden aspect-video">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                      {project.deployed && (
+                        <Button size="sm" variant="secondary" asChild className="rounded-full">
+                          <a href={project.deployed} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 mr-2" /> View
+                          </a>
                         </Button>
-                      </a>
-                    )}
-                    {project.githubLink && (
-                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" variant="secondary" className="gap-2">
-                          <Github className="w-4 h-4" />
-                          Code
+                      )}
+                      {project.githubLink && (
+                        <Button size="sm" variant="outline" asChild className="rounded-full bg-white/10 text-white hover:bg-white/20 border-white/20">
+                          <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4 mr-2" /> Code
+                          </a>
                         </Button>
-                      </a>
-                    )}
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+
+                  {/* Text Content */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {project.title}
+                        </h3>
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-secondary text-secondary-foreground">
+                            {project.category}
+                        </span>
+                    </div>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                      {project.description}
+                    </p>
+                    <div className="mt-auto flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 text-xs font-medium rounded bg-primary/10 text-primary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,10 +15,45 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    // --- CONFIGURATION (Corrected to match your .env) ---
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const templateParams = {
+      name: formData.name,
+      message: formData.message,
+      subject: formData.subject,
+      reply_to: formData.email, 
+      time: new Date().toLocaleString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
+    };
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,7 +84,7 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-muted-foreground text-sm">natnaelmessay70@mail.com</p>
+              <p className="text-muted-foreground text-sm">natnaelmessay70@gmail.com</p>
             </div>
 
             <div className="p-6 rounded-lg bg-card border border-border card-hover text-center">
@@ -63,9 +100,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Your Name
-                  </label>
+                  <label htmlFor="name" className="text-sm font-medium">Your Name</label>
                   <Input
                     id="name"
                     placeholder="John Doe"
@@ -75,9 +110,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Your Email
-                  </label>
+                  <label htmlFor="email" className="text-sm font-medium">Your Email</label>
                   <Input
                     id="email"
                     type="email"
@@ -89,9 +122,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">
-                  Subject
-                </label>
+                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
                 <Input
                   id="subject"
                   placeholder="Project Discussion"
@@ -101,9 +132,7 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Message
-                </label>
+                <label htmlFor="message" className="text-sm font-medium">Message</label>
                 <Textarea
                   id="message"
                   placeholder="Tell me about your project..."
@@ -113,8 +142,20 @@ const Contact = () => {
                   required
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full md:w-auto">
-                Send Message
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full md:w-auto"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </Button>
             </form>
           </div>
