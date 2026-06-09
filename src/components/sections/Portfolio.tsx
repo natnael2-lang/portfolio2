@@ -39,10 +39,10 @@ const Portfolio = () => {
       title: "Hospital Management",
       category: "Full Stack",
       description: "A web platform that automates hospital operations, from patient registration to medical records.",
-      image: "/assets/woldia-hospital-home1 (1).png",
+      image: "/assets/HospitalManagement.png",
       tags: ["React", "Tailwind", "Express", "MongoDB"],
       githubLink: "https://github.com/natnael2-lang/hospitalManagementClient",
-      deployed: "https://hospital-management-client-nu.vercel.app/"
+      deployed: "https://hospital-management-mq2v.vercel.app/"
     },
     {
       title: "Code Editor",
