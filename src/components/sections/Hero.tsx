@@ -78,15 +78,15 @@ const Hero = () => {
 
           {/* Role badge */}
           <div
-            className="absolute z-20 px-4 py-1 rounded-2xl"
+            className="absolute z-20 px-4 py-2.5 rounded-2xl"
             style={{
-              bottom: "8%", left: "2%",
+              bottom: "8%", left: "4%",
               background: "hsl(var(--foreground))",
               color: "hsl(var(--background))",
               boxShadow: "0 8px 24px rgba(0,0,0,0.18)",
             }}
           >
-            <div className="text-sm opacity-55 mb-0.5 uppercase tracking-wider">Current Role</div>
+            <div className="text-[9px] opacity-55 mb-0.5 uppercase tracking-wider">Current Role</div>
             <div className="font-bold text-xs">Full Stack Dev</div>
           </div>
 

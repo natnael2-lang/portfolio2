@@ -82,13 +82,14 @@ const About = () => {
             >
               <h3 className="text-2xl font-semibold mb-6">What I Do</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm a passionate Full Stack Developer specializing in building exceptional digital experiences. 
-                With expertise in both frontend and backend technologies, I create scalable applications that 
-                with robust functionality.
+                I'm a Full Stack Developer with a Computer Engineering background, 
+                specializing in building scalable web applications from responsive 
+                frontends to robust backends and embedded AI-powered systems.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Currently available for dev opportunities, I'm always excited to work on challenging 
-                projects that push the boundaries of web development.
+                 With a 3.74 GPA, experience at Infnova Technologies, and 200+ 
+                 algorithmic challenges solved, I bring both depth and precision 
+                 to every project I work on.
               </p>
               
               <motion.div 

@@ -8,14 +8,24 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "Gym Platform",
-      category: "Full Stack",
-      description: "A web platform to manage gym memberships, track workouts, and schedule classes efficiently.",
-      image: "/assets/project-1.jpg",
+      title: "Dental Clinic",
+      category: "Frontend",
+      description: "A dental clinic website for Dr. Getaneh in Addis Ababa that showcases services and allows patients to book appointments.",
+      image: "/assets/drGetaneh.png",
       tags: ["React", "Node.js", "MongoDB"],
-      githubLink: "https://github.com/yourusername/gym-platform",
-      deployed: "https://best-fitness-website.vercel.app/"
+      githubLink: "https://github.com/natnael2-lang/dental-clinic",
+      deployed: "https://dental-clinic-omega-six.vercel.app/"
     },
+        {
+      title: "Gemini Integrated App",
+      category: "Tools",
+      description: "AI-powered application for real-time data visualization and intelligent responses.",
+      image: "/assets/gemini-new (1).png",
+      tags: ["React", "Tailwind CSS", "API Integration"],
+      githubLink: "https://github.com/yourusername/gemini-app",
+      deployed: "https://gemini-integration2.vercel.app/"
+    },
+    
     {
       title: "Movie Site",
       category: "Frontend",
@@ -43,6 +53,7 @@ const Portfolio = () => {
       githubLink: "https://github.com/natnael2-lang/code-editor-front",
       deployed: "https://code-editor-front.vercel.app/"
     },
+  
     {
       title: "Alle School of Arts",
       category: "Frontend",
@@ -52,24 +63,6 @@ const Portfolio = () => {
       githubLink: "https://github.com/natnael2-lang/alle-school-of-fine-arts",
       deployed: "https://alle-school-of-fine-arts.vercel.app/"
     },
-    {
-      title: "Gemini Integrated App",
-      category: "Tools",
-      description: "AI-powered application for real-time data visualization and intelligent responses.",
-      image: "/assets/gemini-new (1).png",
-      tags: ["React", "Tailwind CSS", "API Integration"],
-      githubLink: "https://github.com/yourusername/gemini-app",
-      deployed: "https://gemini-integration2.vercel.app/"
-    },
-    {
-        title: "Business Tracker",
-        category: "Full Stack",
-        description: "Records daily expenses and provides daily, monthly, and yearly profits using charts.",
-        image: "/assets/bussiness-traker.png",
-        tags: ["React", "CSS", "Recharts"],
-        githubLink: "https://github.com/yourusername/business-tracker",
-        deployed: "https://bussiness-tracker.vercel.app/"
-      },
       {
         title: "Attendance Web App",
         category: "Full Stack",
@@ -79,7 +72,27 @@ const Portfolio = () => {
         githubLink: "https://github.com/natnael2-lang/attendance-frontEnd",
         deployed: "https://attendo-face-reg.vercel.app/"
       },
+  
+    {
+        title: "Business Tracker",
+        category: "Full Stack",
+        description: "Records daily expenses and provides daily, monthly, and yearly profits using charts.",
+        image: "/assets/bussiness-traker.png",
+        tags: ["React", "CSS", "Recharts"],
+        githubLink: "https://github.com/yourusername/business-tracker",
+        deployed: "https://bussiness-tracker.vercel.app/"
+      },
+    
       {
+      title: "Gym Platform",
+      category: "Full Stack",
+      description: "A web platform to manage gym memberships, track workouts, and schedule classes efficiently.",
+      image: "/assets/project-1.jpg",
+      tags: ["React", "Node.js", "MongoDB"],
+      githubLink: "https://github.com/yourusername/gym-platform",
+      deployed: "https://best-fitness-website.vercel.app/"
+    },
+    {
         title: "Guess Game",
         category: "Tools",
         description: "A fun interactive guessing game where users guess numbers within limited attempts.",
@@ -87,7 +100,7 @@ const Portfolio = () => {
         tags: ["React", "Tailwind CSS", "MongoDB"],
         githubLink: "https://github.com/natnael2-lang/guess_game",
         deployed: "https://guess-game-kappa-plum.vercel.app/"
-      }
+    },
   ];
 
   const categories = ["All", "Full Stack", "Frontend", "Tools"];
