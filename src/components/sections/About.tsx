@@ -81,16 +81,21 @@ const About = () => {
               className="space-y-6"
             >
               <h3 className="text-2xl font-semibold mb-6">What I Do</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                I'm a Full Stack Developer with a Computer Engineering background, 
-                specializing in building scalable web applications from responsive 
-                frontends to robust backends and embedded AI-powered systems.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                 With a 3.74 GPA, experience at Infnova Technologies, and 200+ 
-                 algorithmic challenges solved, I bring both depth and precision 
-                 to every project I work on.
-              </p>
+             <p className="text-muted-foreground leading-relaxed">
+                 I'm a Full Stack Developer and Computer Engineering graduate with a strong passion for building scalable, efficient, and user-centered digital solutions. My expertise spans modern frontend development with React, backend development using Node.js and Golang, database design, RESTful APIs, and cloud-based application deployment.
+             </p>
+
+               <p className="text-muted-foreground leading-relaxed">
+                  Throughout my academic journey, I maintained a CGPA of <span className="font-semibold text-foreground">3.74/4.00</span>, which reflects my commitment to continuous learning and technical excellence. Beyond academics, I have strengthened my problem-solving skills by solving 200+ algorithmic challenges and working on real-world software projects.
+               </p>
+
+                 <p className="text-muted-foreground leading-relaxed">
+                   My experience includes developing web-based management systems, designing secure backend architectures, and creating AI-powered embedded solutions such as a Smart Vision Assistant using Raspberry Pi and Computer Vision technologies. I enjoy transforming complex ideas into practical applications that deliver meaningful impact.
+                 </p>
+
+                <p className="text-muted-foreground leading-relaxed">
+                  I am constantly exploring new technologies, improving my engineering skills, and seeking opportunities to collaborate on innovative projects. My goal is to build reliable, high-performance software that solves real-world challenges while providing an exceptional user experience.
+                   </p>
               
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0 }}
