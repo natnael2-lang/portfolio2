@@ -10,7 +10,7 @@ const Experience = () => {
   const timeline = [
     {
       type: "education",
-      year: "2021 – 2025",
+      year: "2021 – 2026",
       title: "Computer Engineering",
       organization: "Addis Ababa University",
       description: "Pursuing a Computer Engineering degree with a focus on software development, algorithms, and system design.",
