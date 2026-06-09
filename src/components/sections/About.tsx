@@ -84,10 +84,10 @@ const About = () => {
               <p className="text-muted-foreground leading-relaxed">
                 I'm a passionate Full Stack Developer specializing in building exceptional digital experiences. 
                 With expertise in both frontend and backend technologies, I create scalable applications that 
-                combine beautiful design with robust functionality.
+                with robust functionality.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Currently available for freelance opportunities, I'm always excited to work on challenging 
+                Currently available for dev opportunities, I'm always excited to work on challenging 
                 projects that push the boundaries of web development.
               </p>
               
