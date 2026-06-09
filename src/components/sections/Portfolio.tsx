@@ -98,7 +98,7 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-20 bg-muted/20">
-      <div className="container mx-auto px-4">
+      <div className="container-1200 mx-auto">
         <div className="max-w-6xl mx-auto">
           
           {/* Section Header */}

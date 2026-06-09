@@ -34,7 +34,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 overflow-hidden" ref={containerRef}
       style={{ background: "hsl(var(--background))" }}>
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container-1200 mx-auto">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}

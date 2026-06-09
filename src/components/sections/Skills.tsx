@@ -38,7 +38,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container-1200 mx-auto">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}

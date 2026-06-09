@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-card border-t border-border py-12">
-      <div className="container mx-auto px-4">
+      <div className="container-1200 mx-auto">
         <div className="flex flex-col items-center gap-6">
           <div className="flex gap-6">
             <a

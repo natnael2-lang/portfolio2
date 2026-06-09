@@ -49,11 +49,11 @@ const Navigation = () => {
     <nav
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
+          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+      <div className="container-1200 mx-auto">
         <div className="flex items-center h-16">
 
           {/* Logo — left */}
@@ -108,7 +108,7 @@ const Navigation = () => {
       {/* Mobile drawer */}
       {isOpen && (
         <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
-          <div className="max-w-[1200px] mx-auto px-4 py-4 space-y-1">
+          <div className="container-1200 mx-auto py-4 space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.href}

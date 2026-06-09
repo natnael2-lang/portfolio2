@@ -25,7 +25,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-muted/30 overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container-1200 mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section Heading Animation */}
           <motion.div 
