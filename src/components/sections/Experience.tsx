@@ -13,6 +13,7 @@ const Experience = () => {
       year: "2021 – 2026",
       title: "Computer Engineering",
       organization: "Addis Ababa University",
+      CGPA:"3.74",
       description: "Pursuing a Computer Engineering degree with a focus on software development, algorithms, and system design.",
     },
     {
@@ -104,6 +105,9 @@ const Experience = () => {
                       </h3>
                       <h4 className="font-semibold text-sm mb-3" style={{ color: "hsl(var(--primary))" }}>
                         {item.organization}
+                      </h4>
+                      <h4 className="font-semibold text-sm mb-3" style={{ color: "hsl(var(--primary))" }}>
+                        {item.CGPA?`CGPA : ${item.CGPA}`:""}
                       </h4>
                       <p className="text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
                         {item.description}

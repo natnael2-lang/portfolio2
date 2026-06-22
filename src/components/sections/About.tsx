@@ -82,11 +82,11 @@ const About = () => {
             >
               <h3 className="text-2xl font-semibold mb-6">What I Do</h3>
            <p className="text-muted-foreground leading-relaxed">
-            I'm a Full Stack Developer and Computer Engineering graduate with a CGPA of <span className="font-semibold text-foreground">3.74/4.00</span>, passionate about building modern web applications and intelligent software solutions. I specialize in React, Node.js, Golang, RESTful APIs, and database systems, with experience developing scalable business applications and AI-powered embedded projects.
+           I enjoy creating modern web applications and intelligent software systems that solve real-world problems. My experience includes frontend development, backend APIs, database design, and cloud deployment.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-             Through professional experience and 200+ solved algorithmic challenges, I have developed strong analytical and problem-solving skills. From designing responsive user interfaces to building secure backend systems and deploying cloud-based applications, I enjoy creating technology that delivers real value and solves meaningful problems.
+           Through professional projects and 200+ solved algorithmic challenges, I have developed strong analytical and problem-solving abilities. I focus on building reliable, scalable, and user-centered solutions.
             </p>
               
               <motion.div 

@@ -1,15 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { Download, Mail } from "lucide-react";
+import { Download, Linkedin, Github } from "lucide-react";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const profile = {
     description: "Natnael Messay - Full Stack Developer",
     image: "/assets/profile/nat2.png",
   };
+
+  const socials = [
+    {
+      label: "LinkedIn",
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/natnael-messay-530177235",
+      hoverColor: "hsl(var(--primary))",
+      hoverBg: "hsl(var(--primary) / 0.1)",
+      hoverBorder: "hsl(var(--primary))",
+    },
+    {
+      label: "GitHub",
+      icon: Github,
+      href: "https://github.com/natnael2-lang",
+      // uses foreground so it works in both light (#0D1728) and dark (#F4F6FA)
+      hoverColor: "hsl(var(--primary))",
+      hoverBg: "hsl(var(--primary) / 0.1)",
+      hoverBorder: "hsl(var(--primary))",
+    },
+  ];
 
   return (
     <section
@@ -19,7 +35,7 @@ const Hero = () => {
     >
       <div className="container-1200 mx-auto flex flex-col lg:flex-row relative z-10 min-h-[calc(100vh-64px)]">
 
-        {/* ── RIGHT: Image (top on mobile, right on desktop) ── */}
+        {/* ── RIGHT: Image ── */}
         <div
           className="
             order-1 lg:order-2
@@ -31,7 +47,6 @@ const Hero = () => {
             overflow-hidden
           "
         >
-          {/* Golden circle — constrained on mobile so it doesn't bleed */}
           <div
             className="absolute rounded-full"
             style={{
@@ -44,7 +59,6 @@ const Hero = () => {
               zIndex: 0,
             }}
           />
-          {/* Desktop: bleed right */}
           <div
             className="absolute rounded-full hidden lg:block"
             style={{
@@ -59,7 +73,6 @@ const Hero = () => {
             }}
           />
 
-          {/* Profile image */}
           <div className="absolute inset-0 flex items-end justify-center z-10">
             <img
               src={profile.image}
@@ -135,30 +148,64 @@ const Hero = () => {
             Building scalable, user-friendly, high performance web applications that make an impact.
           </p>
 
-          <div className="flex flex-wrap gap-4 mb-10">
-            <Button size="lg" className="gap-2 rounded-full px-8" onClick={scrollToContact}>
-              <Mail className="w-5 h-5" /> Contact Me
-            </Button>
+          {/* Download CV + social icons side by side */}
+          <div className="flex flex-wrap items-center gap-3 mb-10">
             <Button size="lg" variant="outline" className="gap-2 rounded-full px-8" asChild>
               <a href="/cv1.pdf" download="Natnael_Messay_CV.pdf">
                 <Download className="w-5 h-5" /> Download CV
               </a>
             </Button>
+
+            {/* divider */}
+            <div className="w-px h-8 hidden sm:block" style={{ background: "hsl(var(--border))" }} />
+
+            {socials.map(({ label, icon: Icon, href, hoverColor, hoverBg, hoverBorder }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex items-center justify-center w-11 h-11 rounded-full"
+                style={{
+                  background: "hsl(var(--muted))",
+                  border: "1px solid hsl(var(--border))",
+                  color: "hsl(var(--muted-foreground))",
+                  transition: "all 0.2s cubic-bezier(0.4,0,0.2,1)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = hoverColor;
+                  e.currentTarget.style.borderColor = hoverBorder;
+                  e.currentTarget.style.background = hoverBg;
+                  e.currentTarget.style.transform = "translateY(-4px) scale(1.1)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = "hsl(var(--muted-foreground))";
+                  e.currentTarget.style.borderColor = "hsl(var(--border))";
+                  e.currentTarget.style.background = "hsl(var(--muted))";
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                }}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          {/* Stats */}
+          <div className="flex items-center gap-0">
             {[
-              { value: "2+", label: "Years Experience" },
-              { value: "15", label: "Projects Completed" },
-              { value: "2",  label: "Happy Clients" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="p-4 sm:p-5 rounded-2xl card-hover text-center min-w-[90px]"
-                style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))" }}
-              >
-                <div className="text-2xl sm:text-3xl font-bold gradient-text mb-1">{stat.value}</div>
-                <div className="text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>{stat.label}</div>
+              { value: "2+", label: "Years experience" },
+              { value: "15", label: "Projects completed" },
+              { value: "2",  label: "Happy clients" },
+            ].map((stat, i) => (
+              <div key={stat.label} className="flex items-center">
+                {i !== 0 && (
+                  <div className="h-10 w-px mx-6" style={{ background: "hsl(var(--border))" }} />
+                )}
+                <div className="flex flex-col items-center">
+                  <span className="text-2xl font-semibold gradient-text leading-none mb-1">{stat.value}</span>
+                  <span className="text-xs uppercase tracking-wide" style={{ color: "hsl(var(--muted-foreground))" }}>{stat.label}</span>
+                </div>
               </div>
             ))}
           </div>
